@@ -1,0 +1,19 @@
+{
+  "URL": "staging",
+  "Login": {
+    "ValidCredintails": {
+      "Username": "Mos",
+      "Password": "777"
+    },
+    "InvalidCredintails": {
+      "InvalidUsername": {
+        "Username": "Ahmed",
+        "Password": "456"
+      },
+      "InvalidPassword": {
+        "Username": "Mohamed",
+        "Password": "789"
+      }
+    }
+  }
+}
