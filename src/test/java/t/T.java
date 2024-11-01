@@ -1,5 +1,6 @@
 package t;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 
@@ -30,5 +31,17 @@ public class T {
         System.out.println(dataModel().Login.InvalidCredintails.InvalidPassword.Username);
         System.out.println(dataModel().Login.InvalidCredintails.InvalidPassword.Password);
     }
+
+    @Test(dataProvider = "dataProviderFort5")
+    public void t5(String username, String password){
+        System.out.println(username);
+        System.out.println(password);
+    }
+
+    @DataProvider
+    public Object[][] dataProviderFort5() throws FileNotFoundException {
+        return dataModel().Login1;
+    }
+
 
 }
