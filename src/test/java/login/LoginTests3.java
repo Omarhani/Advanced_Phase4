@@ -6,7 +6,7 @@ import pages.LoginPage;
 import java.io.FileNotFoundException;
 import static reader.ReadDataFromJson.dataModel;
 
-public class LoginTests extends BaseTests {
+public class LoginTests3 extends BaseTests {
 
     @Test
     public void testSuccessfulLogin() throws FileNotFoundException {
