@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.HomePage;
 import utils.ScreenRecorderUtil;
@@ -60,10 +61,22 @@ public class BaseTests {
         driver.get(dataModel().URL);
     }
     @AfterMethod
-    public void afterMethod(Method method) throws Exception {
+    public void afterMethod(Method method, ITestResult result) throws Exception {
         utilsTests = new UtilsTests(driver);
         utilsTests.takeScreenShot(method);
         ScreenRecorderUtil.stopRecord();
+        utilsTests.setStatus(method,result);
+    }
+
+    @BeforeSuite
+    public void beforeSuite(){
+        utilsTests = new UtilsTests(driver);
+        utilsTests.createReport();
+    }
+    @AfterSuite
+    public void afterSuite(){
+        utilsTests = new UtilsTests(driver);
+        utilsTests.flushReport();
     }
 
     @AfterClass
