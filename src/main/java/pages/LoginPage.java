@@ -16,15 +16,15 @@ public class LoginPage extends MethodHandles {
     private final By loginButton  = By.cssSelector("[data-qa='login-button']");
 
     private void insertEmail(String username){
-        sendKeys(emailField,username);
+        sendKeys(emailField,username, 3);
     }
 
     private void insertPassword(String password){
-        sendKeys(passwordFiled,password);
+        sendKeys(passwordFiled,password, 4);
     }
 
     private void clickOnLoginButton(){
-        click(loginButton);
+        click(loginButton, 6);
     }
 
     public LoginPage loginFeature(String email, String password){

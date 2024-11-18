@@ -7,8 +7,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.*;
 import pages.HomePage;
+import utils.ScreenRecorderUtil;
+import utils.UtilsTests;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.Method;
 
 import static reader.ReadDataFromJson.dataModel;
 
@@ -16,6 +20,7 @@ public class BaseTests {
 
     WebDriver driver;
     protected HomePage homePage;
+    UtilsTests utilsTests;
 
     ChromeOptions chromeOptions;
     FirefoxOptions firefoxOptions;
@@ -50,8 +55,15 @@ public class BaseTests {
     }
 
     @BeforeMethod
-    public void goHome() throws FileNotFoundException {
+    public void goHome(Method method) throws Exception {
+        ScreenRecorderUtil.startRecord(method.getName());
         driver.get(dataModel().URL);
+    }
+    @AfterMethod
+    public void afterMethod(Method method) throws Exception {
+        utilsTests = new UtilsTests(driver);
+        utilsTests.takeScreenShot(method);
+        ScreenRecorderUtil.stopRecord();
     }
 
     @AfterClass

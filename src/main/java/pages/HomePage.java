@@ -12,7 +12,7 @@ public class HomePage extends MethodHandles {
     private final By signInAndLoginLink = By.cssSelector(".fa.fa-lock");
 
     public LoginPage clickOnSignInAndLoginLink(){
-        click(signInAndLoginLink);
+        click(signInAndLoginLink, 5);
         return new LoginPage(driver);
     }
 }
