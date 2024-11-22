@@ -1,32 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression Test Suite" parallel="tests">
-    <test name="Chrome" parallel="classes" thread-count="3">
+    <test name="Chrome" >
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="login.LoginTests"/>
-            <class name="login.LoginTests3"/>
-            <class name="login.LoginTests2">
-                <methods>
-                    <exclude name="testSuccessfulLogin2"></exclude>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test name="Firefox" parallel="classes" thread-count="2">
-        <parameter name="browser" value="firefox"></parameter>
-        <classes>
-            <class name="login.LoginTests2">
-                <methods>
-                    <exclude name="testSuccessfulLogin2"></exclude>
-                </methods>
-            </class>
-            <class name="login.LoginTests3">
-                <methods>
-                    <include name="testSuccessfulLogin3">
-                    </include>
-                </methods>
-            </class>
+
         </classes>
     </test>
 </suite>

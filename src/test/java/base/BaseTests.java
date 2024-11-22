@@ -59,13 +59,19 @@ public class BaseTests {
     public void goHome(Method method) throws Exception {
         ScreenRecorderUtil.startRecord(method.getName());
         driver.get(dataModel().URL);
+        utilsTests = new UtilsTests(driver);
+        utilsTests.createTestCaseInReport(method);
+
     }
     @AfterMethod
     public void afterMethod(Method method, ITestResult result) throws Exception {
         utilsTests = new UtilsTests(driver);
         utilsTests.takeScreenShot(method);
         ScreenRecorderUtil.stopRecord();
-        utilsTests.setStatus(method,result);
+        utilsTests.endsOfSteps();
+        utilsTests.setStatus(result);
+        utilsTests.addAttachment(method);
+
     }
 
     @BeforeSuite

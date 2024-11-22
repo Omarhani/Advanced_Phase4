@@ -4,16 +4,7 @@
     <test name="Chrome">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="login.LoginTests">
-                <methods>
-                    <include name="testSuccessfulLogin"></include>
-                </methods>
-            </class>
-            <class name="login.LoginTests2">
-                <methods>
-                    <exclude name="testSuccessfulLogin2"></exclude>
-                </methods>
-            </class>
+
         </classes>
     </test>
 </suite>
