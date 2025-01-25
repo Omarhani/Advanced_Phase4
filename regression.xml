@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression Test Suite" parallel="tests">
     <test name="Chrome" >
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value=""></parameter>
         <classes>
 
         </classes>
