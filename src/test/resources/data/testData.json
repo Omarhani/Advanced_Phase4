@@ -1,0 +1,14 @@
+{
+  "URL": "https://automationexercise.com/",
+  "Login": {
+    "username": "Mennazes",
+    "password": "test123"
+  },
+  "ContactUs": {
+    "name": "Menna Eid",
+    "email": "Menna@example.com",
+    "subject": "Test Case",
+    "message": "Test message content",
+    "filePath": "testfile.txt"
+  }
+}
