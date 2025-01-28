@@ -1,14 +1,19 @@
 {
-  "URL": "https://automationexercise.com/",
+  "URL": "",
   "Login": {
-    "username": "Mennazes",
-    "password": "test123"
-  },
-  "ContactUs": {
-    "name": "Menna Eid",
-    "email": "Menna@example.com",
-    "subject": "Test Case",
-    "message": "Test message content",
-    "filePath": "testfile.txt"
+    "ValidCredintails": {
+      "Username": "",
+      "Password": ""
+    },
+    "InvalidCredintails": {
+      "InvalidUsername": {
+        "Username": "",
+        "Password": ""
+      },
+      "InvalidPassword": {
+        "Username": "",
+        "Password": ""
+      }
+    }
   }
 }
