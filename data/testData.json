@@ -1,18 +1,18 @@
 {
-  "URL": "",
+  "URL": "https://www.automationexercise.com/",
   "Login": {
     "ValidCredintails": {
-      "Username": "",
-      "Password": ""
+      "Username": "halatest065@gmail.com",
+      "Password": "123456"
     },
     "InvalidCredintails": {
       "InvalidUsername": {
-        "Username": "",
-        "Password": ""
+        "Username": "hala@xxx.net",
+        "Password": "123456"
       },
       "InvalidPassword": {
-        "Username": "",
-        "Password": ""
+        "Username": "halatest065@gmail.com",
+        "Password": "123"
       }
     }
   }

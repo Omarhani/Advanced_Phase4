@@ -2,8 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Smoke Test suite">
     <test name="Chrome">
-        <parameter name="browser" value=""></parameter>
+        <parameter name="browser" value="Chrome"></parameter>
         <classes>
+
+                <class name="login.LoginTest"></class>
 
         </classes>
     </test>
