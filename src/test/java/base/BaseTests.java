@@ -7,7 +7,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import pages.AccountCreatedPage;
 import pages.HomePage;
+import pages.LoginPage;
+import reader.ReadDataFromJson;
 import utils.ScreenRecorderUtil;
 import utils.UtilsTests;
 
@@ -21,10 +24,13 @@ public class BaseTests {
 
     WebDriver driver;
     protected HomePage homePage;
+
+    protected AccountCreatedPage accountCreatedPage;
     UtilsTests utilsTests;
 
     ChromeOptions chromeOptions;
     FirefoxOptions firefoxOptions;
+
 
 
     @BeforeClass
@@ -57,10 +63,12 @@ public class BaseTests {
 
     @BeforeMethod
     public void goHome(Method method) throws Exception {
+
         ScreenRecorderUtil.startRecord(method.getName());
         driver.get(dataModel().URL);
         utilsTests = new UtilsTests(driver);
         utilsTests.createTestCaseInReport(method);
+        accountCreatedPage = new AccountCreatedPage(driver);
 
     }
     @AfterMethod
@@ -83,6 +91,7 @@ public class BaseTests {
     public void afterSuite(){
         utilsTests = new UtilsTests(driver);
         utilsTests.flushReport();
+
     }
 
     @AfterClass
