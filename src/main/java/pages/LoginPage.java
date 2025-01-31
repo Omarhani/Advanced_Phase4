@@ -49,6 +49,9 @@ public class LoginPage extends MethodHandles {
     {
         return  driver.findElement(validationMessage).getText();
     }
+    public String getCurrentUrl(){
+        return driver.getCurrentUrl();
+    }
 
 
 }

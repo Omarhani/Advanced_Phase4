@@ -16,6 +16,7 @@ public class HomePage extends MethodHandles {
 
     private By LoginLink = By.xpath("//*[@href='/login']");
     private By loginText = By.xpath("//*[contains(text(),' Logged in as ')]");
+    private By logoutLink = By.xpath("//*[@href='/logout']") ;
 
     public LoginPage ClickOnLoginLink() {
         click(LoginLink, 20);
@@ -26,6 +27,9 @@ public class HomePage extends MethodHandles {
     {
         String loggedName= driver.findElement(loginText).getText();
         return loggedName;
+    }
+    public void clickOnLogout(){
+        click(logoutLink,5);
     }
 
 
