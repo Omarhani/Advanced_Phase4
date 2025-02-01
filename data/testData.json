@@ -1,19 +1,6 @@
 {
-  "URL": "",
-  "Login": {
-    "ValidCredintails": {
-      "Username": "",
-      "Password": ""
-    },
-    "InvalidCredintails": {
-      "InvalidUsername": {
-        "Username": "",
-        "Password": ""
-      },
-      "InvalidPassword": {
-        "Username": "",
-        "Password": ""
-      }
-    }
-  }
+  "URL": "https://automationexercise.com/",
+  "testCasesURL": "https://automationexercise.com/test_cases"
 }
+
+
