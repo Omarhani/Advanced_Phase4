@@ -1,15 +1,13 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 import utils.MethodHandles;
 
 import java.io.File;
-import java.time.Duration;
+
 
 public class ContactUsPage extends MethodHandles {
     public ContactUsPage(WebDriver driver) {
@@ -44,27 +42,18 @@ public class ContactUsPage extends MethodHandles {
     }
 
     public void clickSubmit() {
-        // Locate the submit button
-        WebElement submitButtonElement = driver.findElement(submitButton);
-
-        // Wait for the submit button to be clickable
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(submitButtonElement));
-
-        // Scroll the submit button into view
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitButtonElement);
-
-        // Use JavaScript to click the submit button
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitButtonElement);
+        click(submitButton, 20);
     }
+
 
     public void handleAlert() {
         acceptAlert();
     }
 
-    public void verifySuccessMessage() {
+    public String verifySuccessMessage() {
         String actualText = getText(successMessage, 10);
         myAssertEquals(actualText.contains("Success! Your details have been submitted successfully."), true);
+        return actualText;
     }
 
     public void navigateToHome() {
