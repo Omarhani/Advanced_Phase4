@@ -9,14 +9,14 @@ import utils.MethodHandles;
         }
 
         // Locators
-        private By testCasesButton = By.cssSelector("a[href='/test_cases']");
+      //  private By testCasesButton = By.cssSelector("a[href='/test_cases']");
         private By testCasesHeader = By.xpath("//h2[contains(., 'Test Cases')]");
         private By homeButton = By.cssSelector("a[href='/']");
 
         // Actions
-        public void clickTestCases() {
-            click(testCasesButton, 10);
-        }
+     //   public void clickTestCases() {
+        //    click(testCasesButton, 10);
+      //  }
 
         public void verifyTestCasesPageVisible() {
             myAssertEquals(isDisplayed(testCasesHeader, 10), true);

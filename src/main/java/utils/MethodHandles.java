@@ -351,6 +351,7 @@ public class MethodHandles {
             }
         }
     }
+
     protected void clickAndHold(By locator, int time) {
         actions = new Actions(driver);
         for (int i = 0; i < 5; i++) {
@@ -422,6 +423,4 @@ public class MethodHandles {
         assertEquals(actualResult, expectedResult);
     }
 
-    public void myAssertContains(String currentUrl, String url) {
-    }
 }

@@ -1,6 +1,24 @@
 {
   "URL": "https://automationexercise.com/",
   "testCasesURL": "https://automationexercise.com/test_cases"
+  "URL": "https://www.automationexercise.com/",
+  "Login": {
+    "ValidCredintails": {
+      "Username": "halatest065@gmail.com",
+      "Password": "123456"
+    },
+    "InvalidCredintails": {
+      "InvalidUsername": {
+        "Username": "hala@xxx.net",
+        "Password": "123456"
+      },
+      "InvalidPassword": {
+        "Username": "halatest065@gmail.com",
+        "Password": "123"
+      }
+    }
+  },
+  "testCasesURL": "https://www.automationexercise.com/test_cases"
 }
 
 
