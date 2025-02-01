@@ -14,8 +14,18 @@ public class HomePage extends MethodHandles {
         this.driver = driver;
     }
 
+
+    }
+    private By contactUsLink = By.cssSelector("a[href='/contact_us']");
     private By LoginLink = By.xpath("//*[@href='/login']");
     private By loginText = By.xpath("//*[contains(text(),' Logged in as ')]");
+
+    public ContactUsPage clickOnContactUsLink() { // Added method to navigate to ContactUsPage
+        click(contactUsLink, 5);
+        return new ContactUsPage(driver);
+    }
+
+
 
     public LoginPage ClickOnLoginLink() {
         click(LoginLink, 20);

@@ -15,5 +15,13 @@
         "Password": "123"
       }
     }
+  },
+  "ContactUs": {
+    "name": "menna eid",
+    "email": "menna@example.com",
+    "subject": "Test Subject",
+    "message": "This is a test message for the Contact Us form.",
+    "filePath": "test.txt"
   }
+
 }

@@ -21,9 +21,6 @@ public class LoginPage extends MethodHandles {
     private By validationMessage=By.xpath("//*[contains(text(),'Your email or password is incorrect!')]");
 
 
-    // String xx= (driver.findElement(By.xpath("//*[contains(text(),'Your email or password is incorrect!')]"))).getText();
-    //String x=(driver.findElement(By.cssSelector("p[style='color: red;']"))).getText();
-
     public void insertEmail(String text) {
         sendKeys(emailField, text, 20);
     }
@@ -44,7 +41,6 @@ public class LoginPage extends MethodHandles {
         return new HomePage(driver);
 
     }
-
     public String GetValidationMessage()
     {
         return  driver.findElement(validationMessage).getText();

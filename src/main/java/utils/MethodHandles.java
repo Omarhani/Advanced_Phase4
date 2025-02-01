@@ -422,4 +422,6 @@ public class MethodHandles {
         assertEquals(actualResult, expectedResult);
     }
 
+    public void myAssertContains(String currentUrl, String contactUs) {
+    }
 }
