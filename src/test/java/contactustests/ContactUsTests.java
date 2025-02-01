@@ -13,13 +13,11 @@ public class ContactUsTests extends BaseTests {
 
     @Test
     public void verifyContactUsFunctionality() throws FileNotFoundException {
-        // Initialize pages with the inherited driver
         HomePage homePage = new HomePage(driver);
         ContactUsPage contactUsPage = new ContactUsPage(driver);
 
-        // Load test data safely
+        // Load test data using dataModel() (same as LoginTest)
         DataModel data = dataModel();
-        DataModel.ContactUs contactData = data.ContactUs;
 
         // Step 3: Verify initial home page URL
         homePage.myAssertEquals(driver.getCurrentUrl(), data.URL);
@@ -28,14 +26,15 @@ public class ContactUsTests extends BaseTests {
         contactUsPage.clickContactUs();
         contactUsPage.verifyGetInTouchVisible();
 
+        // Access ContactUs data directly from DataModel
         contactUsPage.fillContactForm(
-                contactData.name,
-                contactData.email,
-                contactData.subject,
-                contactData.message
+                data.ContactUs.name,
+                data.ContactUs.email,
+                data.ContactUs.subject,
+                data.ContactUs.message
         );
 
-        contactUsPage.uploadFile(contactData.filePath);
+        contactUsPage.uploadFile(data.ContactUs.filePath);
         contactUsPage.clickSubmit();
         contactUsPage.handleAlert();
         contactUsPage.verifySuccessMessage();
