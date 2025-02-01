@@ -12,6 +12,8 @@ public class HomePage extends MethodHandles {
     public HomePage(WebDriver driver) {
         super(driver);
         this.driver = driver;
+    }
+
 
     }
     private By contactUsLink = By.cssSelector("a[href='/contact_us']");

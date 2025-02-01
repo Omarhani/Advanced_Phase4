@@ -7,12 +7,12 @@
     },
     "InvalidCredintails": {
       "InvalidUsername": {
-        "Username": "hala@gmail.com",
+        "Username": "hala@xxx.net",
         "Password": "123456"
       },
       "InvalidPassword": {
         "Username": "halatest065@gmail.com",
-        "Password": "12345"
+        "Password": "123"
       }
     }
   },

@@ -18,6 +18,8 @@ public class LoginPage extends MethodHandles {
     private By emailField = By.xpath("//*[@data-qa='login-email']");
     private By passwordField = By.xpath("//*[@data-qa='login-password']");
     private By loginButton = By.xpath("//*[@data-qa='login-button']");
+    private By validationMessage=By.xpath("//*[contains(text(),'Your email or password is incorrect!')]");
+
 
     public void insertEmail(String text) {
         sendKeys(emailField, text, 20);
@@ -38,6 +40,10 @@ public class LoginPage extends MethodHandles {
         clickOnLoginButton();
         return new HomePage(driver);
 
+    }
+    public String GetValidationMessage()
+    {
+        return  driver.findElement(validationMessage).getText();
     }
 
 
