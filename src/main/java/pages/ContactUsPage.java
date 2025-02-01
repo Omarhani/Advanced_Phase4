@@ -16,7 +16,6 @@ public class ContactUsPage extends MethodHandles {
         super(driver);
     }
 
-    private By contactUsButton = By.cssSelector("a[href='/contact_us']");
     private By getInTouchText = By.xpath("//h2[contains(., 'Get In Touch')]");
     private By nameField = By.name("name");
     private By emailField = By.name("email");
@@ -26,10 +25,6 @@ public class ContactUsPage extends MethodHandles {
     private By submitButton = By.name("submit");
     private By successMessage = By.cssSelector("div.status.alert.alert-success");
     private By homeButton = By.cssSelector("a[href='/']");
-
-    public void clickContactUs() {
-        click(contactUsButton, 10);
-    }
 
     public void verifyGetInTouchVisible() {
         myAssertEquals(isDisplayed(getInTouchText, 10), true);
@@ -50,19 +45,18 @@ public class ContactUsPage extends MethodHandles {
 
     public void clickSubmit() {
         // Locate the submit button
-        WebElement submitButton = driver.findElement(By.name("submit"));
+        WebElement submitButtonElement = driver.findElement(submitButton);
 
         // Wait for the submit button to be clickable
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(submitButton));
+        wait.until(ExpectedConditions.elementToBeClickable(submitButtonElement));
 
         // Scroll the submit button into view
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitButton);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitButtonElement);
 
         // Use JavaScript to click the submit button
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitButton);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitButtonElement);
     }
-
 
     public void handleAlert() {
         acceptAlert();
