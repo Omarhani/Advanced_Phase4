@@ -5,6 +5,8 @@
         <parameter name="browser" value=""></parameter>
         <classes>
 
+                <class name="login.LoginTest"></class>
+
         </classes>
     </test>
 </suite>
