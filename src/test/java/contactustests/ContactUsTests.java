@@ -5,6 +5,7 @@ import data.DataModel;
 import org.testng.annotations.Test;
 import pages.ContactUsPage;
 import pages.HomePage;
+import reader.ReadDataFromJson;
 
 import java.io.FileNotFoundException;
 
@@ -14,20 +15,20 @@ public class ContactUsTests extends BaseTests {
 
     @Test
     public void verifyContactUsFunctionality() throws FileNotFoundException {
-        // Initialize pages with the inherited driver
-        HomePage homePage = new HomePage(driver);
-        ContactUsPage contactUsPage = homePage.clickOnContactUsLink(); // Navigate to ContactUsPage from HomePage
+        // Navigate to the Contact Us page from the HomePage.
+        // Assumes that 'homePage' is already initialized in BaseTests.
+        ContactUsPage contactUsPage = homePage.clickOnContactUsLink();
 
-        // Load test data using dataModel() (same as LoginTest)
+        // Load test data from JSON using dataModel()
         DataModel data = dataModel();
 
-        // Step 3: Verify initial home page URL
+        // Step 3: Verify that the current URL contains "contact_us"
         homePage.myAssertContains(driver.getCurrentUrl(), "contact_us");
 
-        // Step 4-11: Contact form process
-        contactUsPage.verifyGetInTouchVisible(); // Verify "Get In Touch" is visible
+        // Step 4: Verify that "Get In Touch" is visible on the Contact Us page
+        contactUsPage.verifyGetInTouchVisible();
 
-        // Access ContactUs data directly from DataModel
+        // Step 5-8: Fill out the contact form with test data
         contactUsPage.fillContactForm(
                 data.ContactUs.name,
                 data.ContactUs.email,
@@ -35,13 +36,22 @@ public class ContactUsTests extends BaseTests {
                 data.ContactUs.message
         );
 
-        contactUsPage.uploadFile(data.ContactUs.filePath); // Upload the file
-        contactUsPage.clickSubmit(); // Click the submit button
-        contactUsPage.handleAlert(); // Handle the alert (if any)
-        contactUsPage.verifySuccessMessage(); // Verify the success message
-        contactUsPage.navigateToHome(); // Navigate back to the home page
+        // Step 9: Upload the file specified in the test data
+        contactUsPage.uploadFile(data.ContactUs.filePath);
 
-        // Final verification: Ensure the URL is correct after navigating home
+        // Step 10: Click the submit button to send the form
+        contactUsPage.clickSubmit();
+
+        // Step 11: Handle any alert that may appear after submission
+        contactUsPage.handleAlert();
+
+        // Step 12: Verify that the success message is displayed
+        contactUsPage.verifySuccessMessage();
+
+        // Step 13: Navigate back to the Home Page
+        contactUsPage.navigateToHome();
+
+        // Final verification: Ensure that the home page URL matches the expected URL from test data
         homePage.myAssertEquals(driver.getCurrentUrl(), data.URL);
     }
 }
