@@ -15,7 +15,7 @@ public class HomePage extends MethodHandles {
     }
 
 
-    }
+
     private By contactUsLink = By.cssSelector("a[href='/contact_us']");
     private By LoginLink = By.xpath("//*[@href='/login']");
     private By loginText = By.xpath("//*[contains(text(),' Logged in as ')]");
