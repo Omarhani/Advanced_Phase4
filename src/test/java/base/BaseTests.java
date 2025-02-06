@@ -25,7 +25,7 @@ public class BaseTests {
     WebDriver driver;
     protected HomePage homePage;
 
-    protected AccountCreatedPage accountCreatedPage;
+  //  protected AccountCreatedPage accountCreatedPage;
     UtilsTests utilsTests;
 
     ChromeOptions chromeOptions;
@@ -68,7 +68,7 @@ public class BaseTests {
         driver.get(dataModel().URL);
         utilsTests = new UtilsTests(driver);
         utilsTests.createTestCaseInReport(method);
-        accountCreatedPage = new AccountCreatedPage(driver);
+        //accountCreatedPage = new AccountCreatedPage(driver);
 
     }
     @AfterMethod

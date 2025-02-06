@@ -17,8 +17,6 @@ public class SignupPage extends MethodHandles {
 
     private final By registerNameField = By.xpath("//input[@id='name']");
 
-    private final By registerEmailField = By.xpath("//input[@id='email']");
-
     private final By passwordField= By.xpath("//input[@id='password']");
 
     private final By signupnewletterCheckBox = By.xpath("//input[@name='newsletter']");
@@ -67,13 +65,13 @@ public class SignupPage extends MethodHandles {
 
     public void clickOnSignUpNewsLetterCheckBox(){
 
-        clickWithActions(signupnewletterCheckBox,20);
+        clickWithActions(signupnewletterCheckBox,30);
 
     }
 
     public void clickOnSpecialOfferCheckBox(){
 
-        clickWithActions(specialofferCheckBox,20);
+        clickWithActions(specialofferCheckBox,30);
     }
 
     public void insertFirstName(String firstname){
@@ -122,10 +120,12 @@ public class SignupPage extends MethodHandles {
     }
 
 
+
+
+
     public AccountCreatedPage clickOnCreateButton(){
 
         clickWithActions(createAccountBtn,10);
-
         return new AccountCreatedPage(driver);
     }
 

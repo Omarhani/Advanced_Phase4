@@ -14,37 +14,19 @@ public class AccountCreatedPage extends MethodHandles {
         super(driver);
     }
 
-
-    // Locators
-
     private final By accountCreated = By.xpath("//h2[@data-qa='account-created']");
 
-    private final By continue_Btn = By.xpath("//a[@data-qa='continue-button']");
-
-
-
-
-
-
-
-
-
-    public boolean accountCreatedIsDisplayed(){
-
-        return isDisplayed(accountCreated,35);
-
-    }
-
+    private final By continueBtn = By.xpath("//a[@data-qa='continue-button']");
 
     public HomePage clickOnContinueButton(){
 
-        clickWithActions(continue_Btn,35);
+        clickWithActions(continueBtn,40);
 
         return new HomePage(driver);
-
     }
+    public boolean accountCreatedIsDisplayed(){
 
-
-
+        return isDisplayed(accountCreated,40);
+    }
 
 }

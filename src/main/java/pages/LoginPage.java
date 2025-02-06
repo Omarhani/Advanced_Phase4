@@ -18,27 +18,25 @@ public class LoginPage extends MethodHandles {
 
     private final By emailField = By.xpath("//input[@data-qa='signup-email']");
 
-    private final By signup_Btn = By.xpath("//button[@data-qa='signup-button']");
+    private final By signupBtn = By.xpath("//button[@data-qa='signup-button']");
 
 
     //Actions
 
     public void insertName(String name){
 
-        clear(nameField,5);
-
-        sendKeys(nameField,name,5);
+        sendKeys(nameField,name,20);
     }
 
     public void insertEmail(String email){
-        clear(emailField,10);
-        sendKeys(emailField,email,10);
+        sendKeys(emailField,email,20);
     }
 
-    public SignupPage clickOnSignupBtn(){
 
-        click(signup_Btn,5);
-
+    public SignupPage clickOnSignupBtn(String name,String email){
+        insertName(name);
+        insertEmail(email);
+        click(signupBtn,20);
         return new SignupPage(driver);
     }
 }

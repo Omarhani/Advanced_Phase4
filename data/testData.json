@@ -1,5 +1,27 @@
 {
-  "URL": "",
+  "URL": "https://www.automationexercise.com/",
+  "Register": {
+    "Name": "MenaFoo1",
+    "Email": "mena.foo91870@gmail.com"
+  },
+
+  "SignUp":{
+
+    "name": "Menafoo",
+    "email":"mena.foo@gmail.com",
+    "password":"M@m123456789",
+    "firstname": "Mena",
+    "lastname": "Magdi",
+    "company": "Mobil",
+    "address": "18Mohamed Ali Street",
+    "address2": "Elgalaa Street",
+    "state":"Cairo",
+    "city": "Zaytoin",
+    "zipcode":"1113",
+    "mobilenumber": "01200088783"
+  },
+
+
   "Login": {
     "ValidCredintails": {
       "Username": "",

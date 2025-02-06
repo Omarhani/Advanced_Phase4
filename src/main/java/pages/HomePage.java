@@ -8,21 +8,11 @@ import utils.MethodHandles;
 public class HomePage extends MethodHandles {
     public HomePage(WebDriver driver) {
 
-
         super(driver);
     }
 
-
-    // locator
-
      private final By signup_Link = By.xpath("//a[text()=' Signup / Login']");
-
     private final By logIn = By.xpath("//header[@id='header']//ul/li/a[text()=' Logged in as ']");
-
-
-
-
-    // Actions
 
     public LoginPage clickOnSignupLink(){
 
