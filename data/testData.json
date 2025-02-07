@@ -1,5 +1,6 @@
 {
   "URL": "https://www.automationexercise.com/",
+  "LoginPageURL": "https://www.automationexercise.com/login",
   "Login": {
     "ValidCredintails": {
       "Username": "halatest065@gmail.com",

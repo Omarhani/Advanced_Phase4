@@ -408,6 +408,20 @@ public class MethodHandles {
             }
         }
     }
+    protected String getCurrentURL() {
+        String url = null;
+        for (int i = 0; i < 5; i++) {
+            try {
+                setSteps();
+                url = driver.getCurrentUrl();
+                break;
+            } catch (StaleElementReferenceException e) {
+
+            }
+        }
+        return url;
+    }
+
 
 
     public static void myAssertEquals(Object actualResult, Object expectedResult) {
