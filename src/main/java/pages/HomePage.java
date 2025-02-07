@@ -15,10 +15,11 @@ public class HomePage extends MethodHandles {
     }
 
 
-    }
+
     private By contactUsLink = By.cssSelector("a[href='/contact_us']");
     private By LoginLink = By.xpath("//*[@href='/login']");
     private By loginText = By.xpath("//*[contains(text(),' Logged in as ')]");
+    private By logoutLink = By.xpath("//*[@href='/logout']") ;
 
     public ContactUsPage clickOnContactUsLink() { // Added method to navigate to ContactUsPage
         click(contactUsLink, 5);
@@ -36,6 +37,9 @@ public class HomePage extends MethodHandles {
     {
         String loggedName= driver.findElement(loginText).getText();
         return loggedName;
+    }
+    public void clickOnLogout(){
+        click(logoutLink,5);
     }
 
 
