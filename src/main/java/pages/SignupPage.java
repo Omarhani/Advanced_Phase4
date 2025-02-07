@@ -6,11 +6,9 @@ import utils.MethodHandles;
 
 public class SignupPage extends MethodHandles {
 
-
     public SignupPage(WebDriver driver){
 
         super(driver);
-
     }
 
     private final By title = By.xpath("//input[@id='id_gender1']");

@@ -16,9 +16,7 @@ public class HomePage extends MethodHandles {
 
     public LoginPage clickOnSignupLink(){
 
-
         click(signup_Link,5);
-
         return new LoginPage(driver);
     }
 

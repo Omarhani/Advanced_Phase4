@@ -8,7 +8,6 @@ import utils.MethodHandles;
 public class AccountCreatedPage extends MethodHandles {
 
 
-
     public AccountCreatedPage(WebDriver driver){
 
         super(driver);

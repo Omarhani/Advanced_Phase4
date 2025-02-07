@@ -6,7 +6,6 @@ import utils.MethodHandles;
 
 public class LoginPage extends MethodHandles {
 
-
     public LoginPage(WebDriver driver){
 
         super(driver);
@@ -31,7 +30,6 @@ public class LoginPage extends MethodHandles {
     public void insertEmail(String email){
         sendKeys(emailField,email,20);
     }
-
 
     public SignupPage clickOnSignupBtn(String name,String email){
         insertName(name);
