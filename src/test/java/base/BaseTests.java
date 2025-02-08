@@ -25,12 +25,10 @@ public class BaseTests {
     WebDriver driver;
     protected HomePage homePage;
 
-  //  protected AccountCreatedPage accountCreatedPage;
     UtilsTests utilsTests;
 
     ChromeOptions chromeOptions;
     FirefoxOptions firefoxOptions;
-
 
 
     @BeforeClass
@@ -42,19 +40,16 @@ public class BaseTests {
     }
 
     @Parameters("browser")
-    public void setUpBrowser(String browser){
-        if (browser.equalsIgnoreCase("Chrome")){
+    public void setUpBrowser(String browser) {
+        if (browser.equalsIgnoreCase("Chrome")) {
             driver = new ChromeDriver();
-        }
-        else if (browser.equalsIgnoreCase("firefox")){
+        } else if (browser.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
-        }
-        else if (browser.equalsIgnoreCase("headlessChrome")) {
+        } else if (browser.equalsIgnoreCase("headlessChrome")) {
             chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--headless");
             driver = new ChromeDriver(chromeOptions);
-        }
-        else if (browser.equalsIgnoreCase("headlessFirefox")) {
+        } else if (browser.equalsIgnoreCase("headlessFirefox")) {
             firefoxOptions = new FirefoxOptions();
             firefoxOptions.addArguments("--headless");
             driver = new FirefoxDriver(firefoxOptions);
@@ -68,9 +63,9 @@ public class BaseTests {
         driver.get(dataModel().URL);
         utilsTests = new UtilsTests(driver);
         utilsTests.createTestCaseInReport(method);
-        //accountCreatedPage = new AccountCreatedPage(driver);
 
     }
+
     @AfterMethod
     public void afterMethod(Method method, ITestResult result) throws Exception {
         utilsTests = new UtilsTests(driver);
@@ -83,19 +78,20 @@ public class BaseTests {
     }
 
     @BeforeSuite
-    public void beforeSuite(){
+    public void beforeSuite() {
         utilsTests = new UtilsTests(driver);
         utilsTests.createReport();
     }
+
     @AfterSuite
-    public void afterSuite(){
+    public void afterSuite() {
         utilsTests = new UtilsTests(driver);
         utilsTests.flushReport();
 
     }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }
