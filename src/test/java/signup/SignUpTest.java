@@ -20,20 +20,9 @@ public class SignUpTest extends BaseTests {
 
         LoginPage loginpage = homePage.clickOnSignupLink();
         SignupPage signupPage = loginpage.clickOnSignupBtn(dataModel().Register.Name,dataModel().Register.Email);
-         signupPage.clickOnTitle();
-         signupPage.insertRegisterNameField(dataModel().SignUp.name);
-         signupPage.insertPasswordField(dataModel().SignUp.password);
-         signupPage.clickOnSignUpNewsLetterCheckBox();
-         signupPage.clickOnSpecialOfferCheckBox();
-         signupPage.insertFirstName(dataModel().SignUp.firstname);
-         signupPage.insertLastname(dataModel().SignUp.lastname);
-         signupPage.insertCompanyName(dataModel().SignUp.company);
-         signupPage.insertAddressField(dataModel().SignUp.address);
-         signupPage.insertAddress2Field(dataModel().SignUp.address2);
-         signupPage.insertStateField(dataModel().SignUp.state);
-         signupPage.insertCityField(dataModel().SignUp.city);
-         signupPage.insertZipCodeField(dataModel().SignUp.zipcode);
-         signupPage.insertMobileNumberField(dataModel().SignUp.mobilenumber);
+         signupPage.completeSignUpForm(dataModel().SignUp.name,dataModel().SignUp.password,dataModel().SignUp.firstname,
+                 dataModel().SignUp.lastname,dataModel().SignUp.company,dataModel().SignUp.address,dataModel().SignUp.address2,
+                 dataModel().SignUp.state,dataModel().SignUp.city,dataModel().SignUp.zipcode,dataModel().SignUp.mobilenumber);
         AccountCreatedPage accountCreatedPage = signupPage.clickOnCreateButton();
         Assert.assertTrue(accountCreatedPage.accountCreatedIsDisplayed());
         homePage = accountCreatedPage.clickOnContinueButton();

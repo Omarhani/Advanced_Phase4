@@ -45,81 +45,96 @@ public class SignupPage extends MethodHandles {
     // actions
 
 
-    public void clickOnTitle(){
+    private void clickOnTitle(){
 
         click(title,10);
     }
 
-    public void insertRegisterNameField(String name ){
-        clear(registerNameField,10);
-        sendKeys(registerNameField,name,10);
+    private void insertRegisterNameField(String name ){
+        clear(registerNameField,20);
+        sendKeys(registerNameField,name,20);
     }
 
 
-    public void insertPasswordField(String password){
+    private void insertPasswordField(String password){
 
-        sendKeys(passwordField,password,10);
+        sendKeys(passwordField,password,20);
     }
 
-    public void clickOnSignUpNewsLetterCheckBox(){
+    private void clickOnSignUpNewsLetterCheckBox(){
 
-        clickWithActions(signupnewletterCheckBox,30);
+        clickWithActions(signupnewletterCheckBox,40);
 
     }
 
-    public void clickOnSpecialOfferCheckBox(){
+    private void clickOnSpecialOfferCheckBox(){
 
         clickWithActions(specialofferCheckBox,30);
     }
 
-    public void insertFirstName(String firstname){
+    private void insertFirstName(String firstname){
 
         sendKeys(firstNameField,firstname,10);
     }
 
-    public void insertLastname(String lastname){
+    private void insertLastname(String lastname){
 
         sendKeys(lastNameField,lastname,10);
     }
 
-    public void insertCompanyName(String companyname){
+    private void insertCompanyName(String companyname){
 
         sendKeys(companyField,companyname,10);
     }
 
-    public void insertAddressField(String address){
+    private void insertAddressField(String address){
 
         sendKeys(addressField,address,10);
     }
 
-    public void insertAddress2Field(String address2){
+    private void insertAddress2Field(String address2){
 
         sendKeys(addressField2,address2,10);
     }
 
-    public void insertStateField(String state){
+    private void insertStateField(String state){
 
         sendKeys(stateField,state,10);
     }
 
-    public void insertCityField(String city){
+    private void insertCityField(String city){
 
         sendKeys(cityField,city,10);
     }
 
-    public void insertZipCodeField(String zipcode){
+    private void insertZipCodeField(String zipcode){
 
         sendKeys(zipcodeField,zipcode,10);
     }
 
-    public void insertMobileNumberField(String mobilenumber){
+    private void insertMobileNumberField(String mobilenumber){
 
         sendKeys(mobileNumber,mobilenumber,10);
     }
 
 
+    public void completeSignUpForm(String name, String password,String firstname,String lastname, String companyname, String address, String address2, String state,String city, String zipcode, String mobilenumber ){
 
-
+        clickOnTitle();
+        insertRegisterNameField(name);
+        insertPasswordField(password);
+        clickOnSignUpNewsLetterCheckBox();
+        clickOnSpecialOfferCheckBox();
+        insertFirstName(firstname);
+        insertLastname(lastname);
+        insertCompanyName(companyname);
+        insertAddressField(address);
+        insertAddress2Field(address2);
+        insertStateField(state);
+        insertCityField(city);
+        insertZipCodeField(zipcode);
+        insertMobileNumberField(mobilenumber);
+    }
 
     public AccountCreatedPage clickOnCreateButton(){
 
