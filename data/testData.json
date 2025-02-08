@@ -22,20 +22,31 @@
   },
 
 
+
+  "LoginPageURL": "https://www.automationexercise.com/login",
+
   "Login": {
     "ValidCredintails": {
-      "Username": "",
-      "Password": ""
+      "Username": "halatest065@gmail.com",
+      "Password": "123456"
     },
     "InvalidCredintails": {
       "InvalidUsername": {
-        "Username": "",
-        "Password": ""
+        "Username": "hala@xxx.net",
+        "Password": "123456"
       },
       "InvalidPassword": {
-        "Username": "",
-        "Password": ""
+        "Username": "halatest065@gmail.com",
+        "Password": "123"
       }
     }
+  },
+  "ContactUs": {
+    "name": "menna eid",
+    "email": "menna@example.com",
+    "subject": "Test Subject",
+    "message": "This is a test message for the Contact Us form.",
+    "filePath": "test.txt"
   }
+
 }
