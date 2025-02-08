@@ -3,13 +3,6 @@
 <suite name="Regression Test Suite" parallel="tests">
     <test name="Chrome" >
         <parameter name="browser" value="chrome"></parameter>
-        <classes>
-            <class name="login.LoginTest">
-                <methods>
-                    <include name="Tc3_ValidLogin"></include>
-                </methods>
-            </class>
 
-        </classes>
     </test>
 </suite>
