@@ -10,6 +10,7 @@ public class HomePage extends MethodHandles {
     public WebDriver driver;
 
     public HomePage(WebDriver driver) {
+
         super(driver);
         this.driver = driver;
     }
@@ -41,6 +42,22 @@ public class HomePage extends MethodHandles {
     public void clickOnLogout(){
         click(logoutLink,5);
     }
+
+    private final By signup_Link = By.xpath("//a[text()=' Signup / Login']");
+    private final By logIn = By.xpath("//header[@id='header']//ul/li/a[text()=' Logged in as ']");
+
+    public LoginPage clickOnSignupLink(){
+
+        click(signup_Link,5);
+        return new LoginPage(driver);
+    }
+
+    public boolean logInisDisplayed(){
+
+        return isDisplayed(logIn,5);
+    }
+
+
 
 
 
