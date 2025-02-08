@@ -116,9 +116,13 @@ public class SignupPage extends MethodHandles {
 
         sendKeys(mobileNumber,mobilenumber,10);
     }
+    private void clickOnCreateButton(){
 
+        clickWithActions(createAccountBtn,10);
 
-    public void completeSignUpForm(String name, String password,String firstname,String lastname, String companyname, String address, String address2, String state,String city, String zipcode, String mobilenumber ){
+    }
+
+    public AccountCreatedPage completeSignUpForm(String name, String password, String firstname, String lastname, String companyname, String address, String address2, String state, String city, String zipcode, String mobilenumber ){
 
         clickOnTitle();
         insertRegisterNameField(name);
@@ -134,13 +138,13 @@ public class SignupPage extends MethodHandles {
         insertCityField(city);
         insertZipCodeField(zipcode);
         insertMobileNumberField(mobilenumber);
-    }
-
-    public AccountCreatedPage clickOnCreateButton(){
-
-        clickWithActions(createAccountBtn,10);
+        clickOnCreateButton();
         return new AccountCreatedPage(driver);
+
+
     }
+
+
 
 
 
