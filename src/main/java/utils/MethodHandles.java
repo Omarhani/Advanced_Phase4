@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
@@ -58,6 +60,11 @@ public class MethodHandles {
                 ExpectedConditions.visibilityOfElementLocated(locator),
                 ExpectedConditions.elementToBeClickable(locator),
                 ExpectedConditions.presenceOfElementLocated(locator)));
+    }
+    private void explicitWait(WebElement webElement, int time) {
+        wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+        wait.until(ExpectedConditions.and(
+                ExpectedConditions.visibilityOf(webElement)));
     }
 
     protected void invisibilityOf(By locator, int time) {
@@ -421,8 +428,68 @@ public class MethodHandles {
         }
         return url;
     }
+    public WebElement getWebElementByIndex(By locator , int index){
+        return driver.findElements(locator).get(index-1) ;
+    }
+    protected void clickByIndex(By locator , int time , int index ){
+        for (int i = 0 ; i<5 ; i++){
+            try {
+                explicitWait( getWebElementByIndex(locator,index)  , time);
+                addBorderToElement(driver, getWebElementByIndex(locator,index));
+                setSteps();
+                getWebElementByIndex(locator, index).click();
+                break;
+            }catch (StaleElementReferenceException e){
+                System.out.println("Element doesn't exist");
+            }
+        }
+    }
+    protected void hoverOverByIndex(By locator , int index , int time ){
+        actions =  new Actions(driver) ;
+        for (int i = 0 ; i<5 ; i++){
+            try {
+                explicitWait(getWebElementByIndex(locator,index) , time);
+                addBorderToElement(driver, getWebElementByIndex(locator,index));
+                setSteps();
+                actions.moveToElement(getWebElementByIndex(locator,index)).build().perform();
+                break;
+            }catch (StaleElementReferenceException e){
+                System.out.println("Element doesn't exist");
+            }
+        }
 
+    }
+    protected void scrollToElementbyIndex(By locator ,int index , int time){
+        explicitWait(getWebElementByIndex(locator,index) ,time );
+        addBorderToElement(driver, getWebElementByIndex(locator,index));
+        setSteps();
+        actions = new Actions(driver) ;
+        actions.scrollToElement(getWebElementByIndex(locator , index)).build().perform();
+    }
+    protected String getTextByIndex(By locator, int time , int index) {
+        String text = null;
+        for (int i = 0; i < 5; i++) {
+            try {
+                explicitWait(getWebElementByIndex(locator,index), time);
+                setSteps();
+                addBorderToElement(driver, getWebElementByIndex(locator,index));
+                text = getWebElementByIndex(locator,index).getText();
+                break;
+            } catch (StaleElementReferenceException e) {
 
+            }
+        }
+        return text;
+    }
+
+    protected List<String> getListOfElements(By locator){
+        List<WebElement> elements = driver.findElements(locator);
+        List<String> list = new ArrayList<>() ;
+            for (WebElement element :elements  ){
+                list.add(element.getText())  ;
+            }
+            return list ;
+    }
 
     public static void myAssertEquals(Object actualResult, Object expectedResult) {
         test.info(MarkupHelper
