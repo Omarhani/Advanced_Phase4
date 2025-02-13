@@ -21,6 +21,9 @@ public class HomePage extends MethodHandles {
     private By LoginLink = By.xpath("//*[@href='/login']");
     private By loginText = By.xpath("//*[contains(text(),' Logged in as ')]");
     private By logoutLink = By.xpath("//*[@href='/logout']") ;
+    private By productsLink = By.xpath("//*[@href='/products']");
+    private final By signup_Link = By.xpath("//a[text()=' Signup / Login']");
+    private final By logIn = By.xpath("//header[@id='header']//ul/li/a[text()=' Logged in as ']");
 
     public ContactUsPage clickOnContactUsLink() { // Added method to navigate to ContactUsPage
         click(contactUsLink, 5);
@@ -42,10 +45,12 @@ public class HomePage extends MethodHandles {
     public void clickOnLogout(){
         click(logoutLink,5);
     }
+    public ProductsPage clickOnProductsLink(){
+        click(productsLink,5);
+        return new ProductsPage(driver);
+    }
 
-    private final By signup_Link = By.xpath("//a[text()=' Signup / Login']");
-    private final By logIn = By.xpath("//header[@id='header']//ul/li/a[text()=' Logged in as ']");
-
+  
     public LoginPage clickOnSignupLink(){
 
         click(signup_Link,5);
