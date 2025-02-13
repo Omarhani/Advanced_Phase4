@@ -15,11 +15,13 @@ public class ProductsPage extends MethodHandles {
     private final By getAddToCartButtons2 = By.xpath("//*[@class='productinfo text-center']//a");
     private final By clickOnContinue = By.xpath("//*[@class='modal-footer']//button") ;
     private final By viewCartButton = By.xpath("//*[@href='/view_cart']//u") ;
+    private final By viewProductButtons = By.xpath("//*[@class='choose']") ;
+
     public void hoverOverElement(int index){
         hoverOverByIndex(products,index,5);
     }
     public void scrollToElement(int index){
-        scrollToElementbyIndex(products,index,5);
+        scrollToElementbyIndex(viewProductButtons,index,5);
     }
     public void clickOnAddToCart(int index){
         clickByIndex(addToCartButtons,20,index) ;

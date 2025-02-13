@@ -16,8 +16,8 @@ public class AddProductsTests extends BaseTests {
     @Test
     public void testSuccessfulAddToCart() throws InterruptedException, FileNotFoundException {
        ProductsPage productsPage = homePage.clickOnProductsLink();
-       productsPage.scrollToElement(4);
        //Product 1
+        productsPage.scrollToElement(1);
        productsPage.hoverOverElement(1);
        productsPage.clickOnAddToCart(1);
        productsPage.clickOnContinue();

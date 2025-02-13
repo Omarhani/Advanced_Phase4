@@ -64,6 +64,7 @@ public class MethodHandles {
     private void explicitWait(WebElement webElement, int time) {
         wait = new WebDriverWait(driver, Duration.ofSeconds(time));
         wait.until(ExpectedConditions.and(
+                ExpectedConditions.elementToBeClickable(webElement),
                 ExpectedConditions.visibilityOf(webElement)));
     }
 
