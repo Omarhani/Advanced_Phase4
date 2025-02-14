@@ -4,7 +4,7 @@
     "Name": "MenaFoo110",
     "Email": "mena.foo110@gmail.com"
   },
-
+  "ValidationMessage": "Email Address already exist!",
   "SignUp":{
 
     "name": "Menafoo",
