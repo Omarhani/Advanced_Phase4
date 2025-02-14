@@ -40,6 +40,7 @@ public class SignupPage extends MethodHandles {
     private final By mobileNumber = By.xpath("//input[@id='mobile_number']");
 
     private final By createAccountBtn = By.xpath("//button[text()='Create Account']");
+    private final By alreadyExistEmailMessage = By.xpath("//form[@action='/signup']//p") ;
 
 
     // actions
@@ -144,6 +145,9 @@ public class SignupPage extends MethodHandles {
 
     }
 
+    public String getValidationMessage(){
+        return getText(alreadyExistEmailMessage ,5) ;
+    }
 
 
 

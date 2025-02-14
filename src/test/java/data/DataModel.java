@@ -7,7 +7,7 @@ public class DataModel {
     public String LoginPageURL ;
 
     public Register Register;
-
+    public String ValidationMessage ;
     public SignUp SignUp ;
 
 
