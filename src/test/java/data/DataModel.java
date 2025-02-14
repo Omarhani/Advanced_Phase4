@@ -13,5 +13,7 @@ public class DataModel {
 
     public ContactUs ContactUs; // Added ContactUs field
 
+    public SubscriptionMail SubscriptionMail ;
+
 }
 

@@ -4,9 +4,11 @@
     "Name": "MenaFoo110",
     "Email": "mena.foo110@gmail.com"
   },
+  "SubscriptionMail":{
 
+    "emailsubscription": "mena.foo110@gmail.com"
+  },
   "SignUp":{
-
     "name": "Menafoo",
     "email":"mena.foo@gmail.com",
     "password":"M@m123456789",
