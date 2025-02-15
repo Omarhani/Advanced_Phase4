@@ -15,13 +15,13 @@ public class ProductsTest extends BaseTests {
 
     @Test
     public void searchProducts() throws FileNotFoundException {
-        LoginPage loginPage= homePage.ClickOnLoginLink();
+        LoginPage loginPage = homePage.ClickOnLoginLink();
         loginPage.loginFeature(dataModel().Login.ValidCredintails.Username,
                 dataModel().Login.ValidCredintails.Password);
-        ProductPage productPage =homePage.clickOnSearchLink();
+        ProductPage productPage = homePage.clickOnSearchLink();
         productPage.searchProducts(dataModel().SearchProducts.searchInput);
-        String expectedResult= dataModel().SearchProducts.searchInput;
-        String actualResult=productPage.getItemResult();
+        String expectedResult = dataModel().SearchProducts.searchInput;
+        String actualResult = productPage.getItemResult(dataModel().SearchProducts.searchInput);
         assertTrue(expectedResult.toLowerCase().contains(actualResult.toLowerCase()));
 
     }
