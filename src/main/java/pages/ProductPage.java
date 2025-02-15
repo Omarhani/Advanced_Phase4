@@ -18,15 +18,14 @@ public class ProductPage extends MethodHandles {
     private By searchItemResult = By.cssSelector(".product-overlay");
 
     private By searchItem(String search) {
-        return By.xpath("//div[@class='overlay-content']//p[contains(text(),'Men " + search + "')]");
+        return By.xpath("//div[@class='overlay-content']//p[contains(text(),'" + search + "')]");
     }
 
     public void searchProducts(String searchData) {
         isDisplayed(allProducts, 10);
         sendKeys(searchProducts, searchData, 20);
         click(searchIcon, 20);
-        isDisplayed(searchItemResult, 40);
-
+        moveToElement(searchItemResult,20);
     }
 
     public String getItemResult(String searchProduct) {

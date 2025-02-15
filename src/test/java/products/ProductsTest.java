@@ -22,7 +22,7 @@ public class ProductsTest extends BaseTests {
         productPage.searchProducts(dataModel().SearchProducts.searchInput);
         String expectedResult = dataModel().SearchProducts.searchInput;
         String actualResult = productPage.getItemResult(dataModel().SearchProducts.searchInput);
-        assertTrue(expectedResult.toLowerCase().contains(actualResult.toLowerCase()));
+        assertTrue(actualResult.contains(expectedResult));
 
     }
 
