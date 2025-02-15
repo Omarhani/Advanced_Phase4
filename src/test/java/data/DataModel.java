@@ -8,6 +8,8 @@ public class DataModel {
 
     public Register Register;
 
+    public SearchProducts SearchProducts;
+
     public SignUp SignUp ;
 
 
