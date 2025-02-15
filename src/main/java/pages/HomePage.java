@@ -28,6 +28,9 @@ public class HomePage extends MethodHandles {
 
 
 
+    private By productsLink=By.xpath("//*[@href='/products']");
+
+
     public ContactUsPage clickOnContactUsLink() { // Added method to navigate to ContactUsPage
         click(contactUsLink, 5);
         return new ContactUsPage(driver);
@@ -39,6 +42,14 @@ public class HomePage extends MethodHandles {
         click(LoginLink, 20);
         return new LoginPage(driver);
     }
+
+
+    public ProductPage clickOnSearchLink()
+    {
+        click(productsLink,20);
+        return new ProductPage(driver);
+    }
+
 
     public String getLoggedUserName()
     {

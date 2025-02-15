@@ -49,6 +49,9 @@
     "subject": "Test Subject",
     "message": "This is a test message for the Contact Us form.",
     "filePath": "test.txt"
+  },
+  "SearchProducts": {
+    "searchInput": "Colour Blocked Shirt"
   }
 
 }

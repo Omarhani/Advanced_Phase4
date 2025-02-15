@@ -17,7 +17,7 @@ public class LoginTest extends BaseTests {
 
 
     @Test(priority = 1)
-    public void Tc1_InValidLoginusername () throws FileNotFoundException {
+    public void Tc1InValidLoginUsername () throws FileNotFoundException {
 
         LoginPage loginPage = homePage.ClickOnLoginLink();
         loginPage.loginFeature(dataModel().Login.InvalidCredintails.InvalidUsername.Username,
@@ -28,7 +28,7 @@ public class LoginTest extends BaseTests {
     }
 
     @Test(priority = 2)
-    public void Tc2_InValidLoginPassword () throws FileNotFoundException {
+    public void Tc2InValidLoginPassword () throws FileNotFoundException {
 
         LoginPage loginPage1 = homePage.ClickOnLoginLink();
         loginPage1.loginFeature(dataModel().Login.InvalidCredintails.InvalidPassword.Username,
@@ -39,14 +39,14 @@ public class LoginTest extends BaseTests {
     }
 
     @Test(priority = 3)
-    public void Tc3_ValidLogin () throws FileNotFoundException {
+    public void Tc3ValidLogin () throws FileNotFoundException {
 
         LoginPage  loginPage= homePage.ClickOnLoginLink();
         loginPage.loginFeature(dataModel().Login.ValidCredintails.Username,
                 dataModel().Login.ValidCredintails.Password);
     }
     @Test
-    public void Tc1_ValidLogin () throws FileNotFoundException {
+    public void CheckValidLogin () throws FileNotFoundException {
 
         LoginPage  loginPage= homePage.ClickOnLoginLink();
         loginPage.loginFeature(dataModel().Login.ValidCredintails.Username,
