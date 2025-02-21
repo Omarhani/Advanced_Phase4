@@ -23,6 +23,7 @@ public class HomePage extends MethodHandles {
     private final By emailSubscriber = By.id("susbscribe_email");
     private final By arrowButton = By.xpath("//button[@id='subscribe']");
     private final By successfullMessage = By.xpath("//div[text()='You have been successfully subscribed!']");
+    private final By cartShopping = By.xpath("//a[text()=' Cart']");
 
 
 
@@ -89,6 +90,14 @@ public class HomePage extends MethodHandles {
     public boolean successMessageDisplayed(){
 
         return isDisplayed(successfullMessage,10);
+
+    }
+
+    public CartPage clickOnCartMenu(){
+
+        click(cartShopping,10);
+
+        return new CartPage(driver);
 
     }
 

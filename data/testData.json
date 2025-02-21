@@ -8,6 +8,10 @@
 
     "emailsubscription": "mena.foo110@gmail.com"
   },
+  "CartMail":{
+
+    "emailsubscription":"mena.foo110@gmail.com"
+  },
   "SignUp":{
     "name": "Menafoo",
     "email":"mena.foo@gmail.com",
