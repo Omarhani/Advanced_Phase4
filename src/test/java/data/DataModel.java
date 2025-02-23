@@ -9,10 +9,14 @@ public class DataModel {
 
     public Register Register;
 
+    public SearchProducts SearchProducts;
+
     public SignUp SignUp ;
 
 
     public ContactUs ContactUs; // Added ContactUs field
+
+    public SubscriptionMail SubscriptionMail ;
 
 }
 
