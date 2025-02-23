@@ -10,22 +10,35 @@ public class ProductsPage extends MethodHandles {
         super(driver);
     }
 
-    private final By products = By.xpath("//*[@class='single-products']") ;
-    private final By addToCartButtons= By.xpath("//*[@class='single-products']//*[@class='overlay-content']//a") ;
+    private  By getProduct(int index){
+        return By.xpath("//*[@class='col-sm-4']["+index+"]//*[@class='single-products']");
+    }
+    private final By addToCartButtons= By.xpath("//*[@class='single-products']//*[@class='overlay-content']//a");
+    private By getAddToCartButton(int index){
+        return By.xpath("//*[@class='col-sm-4']["+index+"]//*[@class='single-products']//*[@class='overlay-content']//a")  ;
+    }
     private final By getAddToCartButtons2 = By.xpath("//*[@class='productinfo text-center']//a");
     private final By clickOnContinue = By.xpath("//*[@class='modal-footer']//button") ;
     private final By viewCartButton = By.xpath("//*[@href='/view_cart']//u") ;
-    private final By viewProductButtons = By.xpath("//*[@class='choose']") ;
+    private By getProductButton(int index){
+       return By.xpath("//*[@class='col-sm-4']["+index+"]//*[@class='choose']");
+    } ;
 
-    public void hoverOverElement(int index){
-        hoverOverByIndex(products,index,5);
+    private void hoverOverElement(int index){
+         moveToElement(getProduct(index),5);
     }
-    public void scrollToElement(int index){
-        scrollToElementbyIndex(viewProductButtons,index,5);
+    private void scrollToElement(int index){
+        moveToElement(getProductButton(index),5);
     }
-    public void clickOnAddToCart(int index){
-        clickByIndex(addToCartButtons,20,index) ;
+    private void clickOnAddToCart(int index){
+        click(getAddToCartButton(index),5);
 //        System.out.println(getText(addToCartButtons,5));
+    }
+
+    public void addProductToCart( int index){
+        scrollToElement(index);
+        hoverOverElement(index);
+        clickOnAddToCart(index);
     }
     public void clickOnContinue(){
         click(clickOnContinue,10);

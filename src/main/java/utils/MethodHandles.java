@@ -432,41 +432,9 @@ public class MethodHandles {
     public WebElement getWebElementByIndex(By locator , int index){
         return driver.findElements(locator).get(index-1) ;
     }
-    protected void clickByIndex(By locator , int time , int index ){
-        for (int i = 0 ; i<5 ; i++){
-            try {
-                explicitWait( getWebElementByIndex(locator,index)  , time);
-                addBorderToElement(driver, getWebElementByIndex(locator,index));
-                setSteps();
-                getWebElementByIndex(locator, index).click();
-                break;
-            }catch (StaleElementReferenceException e){
-                System.out.println("Element doesn't exist");
-            }
-        }
-    }
-    protected void hoverOverByIndex(By locator , int index , int time ){
-        actions =  new Actions(driver) ;
-        for (int i = 0 ; i<5 ; i++){
-            try {
-                explicitWait(getWebElementByIndex(locator,index) , time);
-                addBorderToElement(driver, getWebElementByIndex(locator,index));
-                setSteps();
-                actions.moveToElement(getWebElementByIndex(locator,index)).build().perform();
-                break;
-            }catch (StaleElementReferenceException e){
-                System.out.println("Element doesn't exist");
-            }
-        }
 
-    }
-    protected void scrollToElementbyIndex(By locator ,int index , int time){
-        explicitWait(getWebElementByIndex(locator,index) ,time );
-        addBorderToElement(driver, getWebElementByIndex(locator,index));
-        setSteps();
-        actions = new Actions(driver) ;
-        actions.scrollToElement(getWebElementByIndex(locator , index)).build().perform();
-    }
+
+
     protected String getTextByIndex(By locator, int time , int index) {
         String text = null;
         for (int i = 0; i < 5; i++) {

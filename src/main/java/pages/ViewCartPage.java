@@ -11,21 +11,23 @@ public class ViewCartPage extends MethodHandles {
         super(driver);
     }
     private final By descriptions = By.xpath("//tbody//tr//*[@class='cart_description']//h4//a") ;
-    private final By prices = By.xpath("//tbody//tr//*[@class='cart_price']//p") ;
-    private final By quantities = By.xpath("//tbody//tr//*[@class='cart_quantity']//button") ;
-    private final By total = By.xpath("//tbody//tr//*[@class='cart_total']//p") ;
-
-    public String getDescription(int index){
-        return getTextByIndex(descriptions,5,index);
+    private By getPriceText(int index){
+        return By.xpath("//tbody//tr["+index+"]//*[@class='cart_price']//p") ;
+    }
+    private By getQuantitiesText(int index){
+        return By.xpath("//tbody//tr["+index+"]//*[@class='cart_quantity']//button") ;
+    }
+    private By getTotalsText(int index){
+        return By.xpath("//tbody//tr["+index+"]//*[@class='cart_total']//p") ;
     }
     public String getPrice(int index){
-        return getTextByIndex(prices,5,index);
+        return getText(getPriceText(index),5) ;
     }
     public String getQuantity(int index){
-        return getTextByIndex(quantities,5,index);
+        return getText(getQuantitiesText(index),5);
     }
     public String getTotal(int index){
-        return getTextByIndex(total,5,index);
+        return getText(getTotalsText(index),5);
     }
     public List<String> getSelectedProducts(){
         System.out.println(getListOfElements(descriptions));
