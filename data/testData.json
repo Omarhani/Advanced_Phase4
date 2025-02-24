@@ -1,19 +1,75 @@
 {
-  "URL": "",
+  "URL": "https://www.automationexercise.com/",
+  "Register": {
+    "Name": "MenaFoo110",
+    "Email": "mena.foo110@gmail.com"
+  },
+  "SubscriptionMail":{
+
+    "emailsubscription": "mena.foo110@gmail.com"
+  },
+  "CartMail":{
+
+    "emailsubscription":"mena.foo110@gmail.com"
+  },
+  "SignUp":{
+    "name": "Menafoo",
+    "email":"mena.foo@gmail.com",
+    "password":"M@m123456789",
+    "firstname": "Mena",
+    "lastname": "Magdi",
+    "company": "Mobil",
+    "address": "18Mohamed Ali Street",
+    "address2": "Elgalaa Street",
+    "state":"Cairo",
+    "city": "Zaytoin",
+    "zipcode":"1113",
+    "mobilenumber": "01200088783"
+  },
+
+
+
+  "LoginPageURL": "https://www.automationexercise.com/login",
+
   "Login": {
     "ValidCredintails": {
-      "Username": "",
-      "Password": ""
+      "Username": "halatest065@gmail.com",
+      "Password": "123456"
     },
     "InvalidCredintails": {
       "InvalidUsername": {
-        "Username": "",
-        "Password": ""
+        "Username": "hala@xxx.net",
+        "Password": "123456"
       },
       "InvalidPassword": {
-        "Username": "",
-        "Password": ""
+        "Username": "halatest065@gmail.com",
+        "Password": "123"
       }
     }
+  },
+  "ContactUs": {
+    "name": "menna eid",
+    "email": "menna@example.com",
+    "subject": "Test Subject",
+    "message": "This is a test message for the Contact Us form.",
+    "filePath": "test.txt"
+  },
+  "SearchProducts": {
+    "searchInput": "Colour Blocked Shirt"
+  },
+  "Products" : {
+    "Item1": {
+      "description": "Blue Top",
+      "Price" : "Rs. 500" ,
+      "Quantity" : "1",
+      "Total" : "Rs. 500"
+    },
+    "Item2": {
+      "Description": "Men Tshirt",
+      "Price" : "Rs. 400" ,
+      "Quantity" : "1",
+      "Total" : "Rs. 400"
+    }
   }
+
 }

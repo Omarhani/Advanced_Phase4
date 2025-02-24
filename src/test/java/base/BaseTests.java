@@ -7,7 +7,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import pages.AccountCreatedPage;
 import pages.HomePage;
+import pages.LoginPage;
+import reader.ReadDataFromJson;
 import utils.ScreenRecorderUtil;
 import utils.UtilsTests;
 
@@ -19,8 +22,9 @@ import static reader.ReadDataFromJson.dataModel;
 
 public class BaseTests {
 
-    WebDriver driver;
+    protected  WebDriver driver;
     protected HomePage homePage;
+
     UtilsTests utilsTests;
 
     ChromeOptions chromeOptions;
@@ -36,19 +40,16 @@ public class BaseTests {
     }
 
     @Parameters("browser")
-    public void setUpBrowser(String browser){
-        if (browser.equalsIgnoreCase("Chrome")){
+    public void setUpBrowser(String browser) {
+        if (browser.equalsIgnoreCase("Chrome")) {
             driver = new ChromeDriver();
-        }
-        else if (browser.equalsIgnoreCase("firefox")){
+        } else if (browser.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
-        }
-        else if (browser.equalsIgnoreCase("headlessChrome")) {
+        } else if (browser.equalsIgnoreCase("headlessChrome")) {
             chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--headless");
             driver = new ChromeDriver(chromeOptions);
-        }
-        else if (browser.equalsIgnoreCase("headlessFirefox")) {
+        } else if (browser.equalsIgnoreCase("headlessFirefox")) {
             firefoxOptions = new FirefoxOptions();
             firefoxOptions.addArguments("--headless");
             driver = new FirefoxDriver(firefoxOptions);
@@ -57,12 +58,14 @@ public class BaseTests {
 
     @BeforeMethod
     public void goHome(Method method) throws Exception {
+
         ScreenRecorderUtil.startRecord(method.getName());
         driver.get(dataModel().URL);
         utilsTests = new UtilsTests(driver);
         utilsTests.createTestCaseInReport(method);
 
     }
+
     @AfterMethod
     public void afterMethod(Method method, ITestResult result) throws Exception {
         utilsTests = new UtilsTests(driver);
@@ -75,18 +78,20 @@ public class BaseTests {
     }
 
     @BeforeSuite
-    public void beforeSuite(){
+    public void beforeSuite() {
         utilsTests = new UtilsTests(driver);
         utilsTests.createReport();
     }
+
     @AfterSuite
-    public void afterSuite(){
+    public void afterSuite() {
         utilsTests = new UtilsTests(driver);
         utilsTests.flushReport();
+
     }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

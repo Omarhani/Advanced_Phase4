@@ -5,6 +5,7 @@
         <parameter name="browser" value="chrome"></parameter>
         <classes>
 
+
         </classes>
     </test>
 </suite>
