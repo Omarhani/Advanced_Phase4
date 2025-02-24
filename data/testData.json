@@ -56,6 +56,20 @@
   },
   "SearchProducts": {
     "searchInput": "Colour Blocked Shirt"
+  },
+  "Products" : {
+    "Item1": {
+      "description": "Blue Top",
+      "Price" : "Rs. 500" ,
+      "Quantity" : "1",
+      "Total" : "Rs. 500"
+    },
+    "Item2": {
+      "Description": "Men Tshirt",
+      "Price" : "Rs. 400" ,
+      "Quantity" : "1",
+      "Total" : "Rs. 400"
+    }
   }
 
 }

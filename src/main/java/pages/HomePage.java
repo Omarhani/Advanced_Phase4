@@ -24,12 +24,11 @@ public class HomePage extends MethodHandles {
     private final By arrowButton = By.xpath("//button[@id='subscribe']");
     private final By successfullMessage = By.xpath("//div[text()='You have been successfully subscribed!']");
     private final By cartShopping = By.xpath("//a[text()=' Cart']");
+    private By productsLink = By.xpath("//*[@href='/products']");
 
 
 
 
-
-    private By productsLink=By.xpath("//*[@href='/products']");
 
 
     public ContactUsPage clickOnContactUsLink() { // Added method to navigate to ContactUsPage
@@ -112,6 +111,10 @@ public class HomePage extends MethodHandles {
 
     }
 
+    public ProductPage clickOnProductsLink(){
+        click(productsLink,5);
+        return new ProductPage(driver);
+    }
 
 
 
