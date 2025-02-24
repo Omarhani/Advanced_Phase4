@@ -18,6 +18,7 @@ public class DataModel {
     public SubscriptionMail SubscriptionMail ;
 
     public CartMail CartMail ;
+    public Products Products ;
 
 }
 

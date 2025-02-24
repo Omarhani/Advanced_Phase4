@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
@@ -420,6 +422,15 @@ public class MethodHandles {
             }
         }
         return url;
+    }
+
+    protected List<String> getListOfElements(By locator){
+        List<WebElement> elements = driver.findElements(locator);
+        List<String> list = new ArrayList<>() ;
+        for (WebElement element :elements  ){
+            list.add(element.getText())  ;
+        }
+        return list ;
     }
 
 
