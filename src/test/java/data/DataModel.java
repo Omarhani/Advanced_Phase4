@@ -11,8 +11,11 @@ public class DataModel {
 
     public SignUp SignUp ;
 
-
     public ContactUs ContactUs; // Added ContactUs field
+
+    public SubscriptionMail SubscriptionMail ;
+
+    public CartMail CartMail ;
 
 }
 

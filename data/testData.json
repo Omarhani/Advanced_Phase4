@@ -5,6 +5,15 @@
     "Email": "mena.foo110@gmail.com"
   },
 
+
+  "SubscriptionMail":{
+
+    "emailsubscription": "mena.foo110@gmail.com"
+  },
+  "CartMail":{
+
+    "emailsubscription":"mena.foo110@gmail.com"
+  },
   "SignUp":{
 
     "name": "Menafoo",

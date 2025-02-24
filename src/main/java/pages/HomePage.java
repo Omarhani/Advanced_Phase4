@@ -16,11 +16,16 @@ public class HomePage extends MethodHandles {
     }
 
 
+    private  final By contactUsLink = By.cssSelector("a[href='/contact_us']");
+    private final  By LoginLink = By.xpath("//*[@href='/login']");
+    private final By loginText = By.xpath("//*[contains(text(),' Logged in as ')]");
+    private final By logoutLink = By.xpath("//*[@href='/logout']") ;
+    private final By subscription = By.xpath("//h2[text()='Subscription']");
+    private final By emailSubscriber = By.id("susbscribe_email");
+    private final By arrowButton = By.xpath("//button[@id='subscribe']");
+    private final By successfullMessage = By.xpath("//div[text()='You have been successfully subscribed!']");
+    private final By cartShopping = By.xpath("//a[text()=' Cart']");
 
-    private By contactUsLink = By.cssSelector("a[href='/contact_us']");
-    private By LoginLink = By.xpath("//*[@href='/login']");
-    private By loginText = By.xpath("//*[contains(text(),' Logged in as ')]");
-    private By logoutLink = By.xpath("//*[@href='/logout']") ;
     private By productsLink = By.xpath("//*[@href='/products']");
     private final By signup_Link = By.xpath("//a[text()=' Signup / Login']");
     private final By logIn = By.xpath("//header[@id='header']//ul/li/a[text()=' Logged in as ']");
@@ -64,6 +69,25 @@ public class HomePage extends MethodHandles {
 
 
 
+    public void successfullSubscription(String emailsubscriotion){
+        insertEmailSubscription(emailsubscriotion);
+        clickOnArrowButton();
+
+    }
+
+    public boolean successMessageDisplayed(){
+
+        return isDisplayed(successfullMessage,10);
+
+    }
+
+    public CartPage clickOnCartMenu(){
+
+        click(cartShopping,10);
+
+        return new CartPage(driver);
+
+    }
 
 
 
