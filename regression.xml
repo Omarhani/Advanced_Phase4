@@ -3,6 +3,8 @@
 <suite name="Regression Test Suite" parallel="tests">
     <test name="Chrome" >
         <parameter name="browser" value="chrome"></parameter>
+        <classes>
 
+        </classes>
     </test>
 </suite>
